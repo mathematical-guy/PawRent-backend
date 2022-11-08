@@ -31,6 +31,7 @@ THIRD_PARTY_DEPENDENCIES = [
 
 USER_APPS = [
     'pet',
+    'account_management',
 ]
 
 INSTALLED_APPS = INSTALLED_APPS + THIRD_PARTY_DEPENDENCIES + USER_APPS
@@ -110,3 +111,6 @@ MEDIA_URL = '/media/'
 
 # Path where media is stored
 MEDIA_ROOT = BASE_DIR / 'media/'
+
+AUTH_USER_MODEL = 'account_management.User'
+
