@@ -1,5 +1,6 @@
 from pet.models import Pet
 from rest_framework import serializers
+from rest_framework import generics
 
 
 class PetListAnonymousUserSerializer(serializers.ModelSerializer):
