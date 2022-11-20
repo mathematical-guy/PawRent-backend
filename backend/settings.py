@@ -11,7 +11,7 @@ SECRET_KEY = env.str("SECRET_KEY", "")
 
 DEBUG = env.bool("DEBUG")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -26,17 +26,20 @@ INSTALLED_APPS = [
 
 THIRD_PARTY_DEPENDENCIES = [
     'rest_framework',
+    "corsheaders",
     'django_extensions',
 ]
 
 USER_APPS = [
     'pet',
     'account_management',
+    'app_apis',
 ]
 
 INSTALLED_APPS = INSTALLED_APPS + THIRD_PARTY_DEPENDENCIES + USER_APPS
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -114,3 +117,6 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 
 AUTH_USER_MODEL = 'account_management.User'
 
+# CORS Configurations               # Todo: Set this in .env
+
+CORS_ALLOW_ALL_ORIGINS = True
