@@ -2,6 +2,8 @@ from rest_framework import serializers
 from pet.models import Pet, PetCategory
 
 
+
+
 class PetSerializer(serializers.ModelSerializer):
     category = serializers.SlugRelatedField(
         queryset=PetCategory.objects.all(), slug_field="category",
