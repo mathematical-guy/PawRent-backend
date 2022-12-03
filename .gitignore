@@ -140,3 +140,9 @@ GitHub.sublime-settings
 
 # Migrations files
 */migrations/
+
+*.iml
+
+.idea/
+
+pets-profile/
