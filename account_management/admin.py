@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import User
+from .models import User, Contract
 
 
 @admin.register(User)
@@ -27,3 +27,16 @@ class UserAdmin(admin.ModelAdmin):
         'date_joined',
     )
     raw_id_fields = ('groups', 'user_permissions')
+
+
+@admin.register(Contract)
+class ContractAdmin(admin.ModelAdmin):
+    list_display = (
+        'id',
+        'owner',
+        'renter',
+        'created',
+        'duration',
+        'is_active',
+    )
+    list_filter = ('owner', 'renter', 'created', 'is_active')
