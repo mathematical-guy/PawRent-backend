@@ -33,4 +33,4 @@ class Pet(models.Model):
     is_rented = models.BooleanField(default=False, verbose_name="Is Pet Rented ?")
 
     def __str__(self):
-        return f"{self.name} - {self.category.name}"
+        return f"{self.name} - {self.category.category}"
